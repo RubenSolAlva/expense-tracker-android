@@ -10,8 +10,12 @@ import com.solalva.expensetracker.data.features.financial_accounts.FinancialAcco
 import com.solalva.expensetracker.data.features.transaction_categories.TransactionCategoriesRepository
 import com.solalva.expensetracker.data.features.transactions.TransactionsRepository
 import com.solalva.expensetracker.domain.features.financial_accounts.IFinancialAccountsRepository
+import com.solalva.expensetracker.domain.features.financial_accounts.useCases.GetAccountsUseCase
+import com.solalva.expensetracker.domain.features.financial_accounts.useCases.GetFinancialAccountsUseCase
 import com.solalva.expensetracker.domain.features.transaction_categories.ITransactionCategoriesRepository
+import com.solalva.expensetracker.domain.features.transaction_categories.useCases.GetTransactionCategoriesByTransactionTypeUseCase
 import com.solalva.expensetracker.domain.features.transactions.ITransactionsRepository
+import com.solalva.expensetracker.domain.features.transactions.useCases.SaveTransactionUseCase
 import com.solalva.expensetracker.presentation.features.main.MainViewModel
 import com.solalva.expensetracker.presentation.features.transaction.TransactionViewModel
 import org.koin.android.ext.koin.androidContext
@@ -46,6 +50,10 @@ val expenseTrackerModule = module {
     single<ITransactionsRepository> { TransactionsRepository(get()) }
 
     // UseCases
+    factory { GetAccountsUseCase(get()) }
+    factory { GetFinancialAccountsUseCase(get()) }
+    factory { GetTransactionCategoriesByTransactionTypeUseCase(get()) }
+    factory { SaveTransactionUseCase(get()) }
 
     //ViewModels
     viewModel { MainViewModel(get()) }
