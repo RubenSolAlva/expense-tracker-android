@@ -14,7 +14,6 @@ class MainApplication : Application() {
     }
 
     private fun setupDependencyInjection() = startKoin {
-        androidLogger()
         androidContext(this@MainApplication)
         modules(expenseTrackerModule)
     }

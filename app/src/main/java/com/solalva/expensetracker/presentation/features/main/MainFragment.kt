@@ -7,7 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.solalva.expensetracker.databinding.MainFragmentBinding
+import com.solalva.expensetracker.presentation.core.lifecycle.observe
 import com.solalva.expensetracker.presentation.core.lifecycle.observeEvent
+import com.solalva.expensetracker.presentation.core.models.FinancialAccountModel
+import com.solalva.expensetracker.presentation.features.main.models.accountHeader
+import com.solalva.expensetracker.presentation.features.main.models.accountTransactionItem
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -32,7 +36,13 @@ class MainFragment : Fragment() {
         observers()
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchAccountsDetails()
+    }
+
     private fun observers() {
+        observe(viewModel.financialAccounts) { updateFianancialAccontsUI(it) }
         observeEvent(viewModel.navigateToTransaction) { navigateToTransaction() }
     }
 
@@ -40,6 +50,27 @@ class MainFragment : Fragment() {
         findNavController().navigate(
             MainFragmentDirections.actionMainFragmentToTransactionFragment()
         )
+
+    private fun updateFianancialAccontsUI(financialAccountModel: List<FinancialAccountModel>) {
+        binding.mainRecyclerView.withModels {
+            financialAccountModel.forEach { financialAccount ->
+                accountHeader {
+                    id("header-${financialAccount.account.id}")
+                    name(financialAccount.account.name)
+                    balance(financialAccount.balance)
+                }
+
+                financialAccount.transactions.sortedByDescending { it.time }.forEach { transaction ->
+                    accountTransactionItem {
+                        id("transaction-${transaction.id}")
+                        transactionCategoryName(transaction.transactionCategory.name)
+                        amount(transaction.amount)
+                        time(transaction.time)
+                    }
+                }
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

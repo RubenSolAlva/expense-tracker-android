@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
-apply plugin: 'kotlin-parcelize'
 
 android {
 
@@ -58,18 +58,20 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${versions.appcompat}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
     implementation "androidx.core:core-ktx:${versions.core_ktx}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+    implementation "androidx.room:room-runtime:${versions.room}"
+    kapt "androidx.room:room-compiler:${versions.room}"
+    implementation "com.google.android.material:material:${versions.material}"
     implementation "io.insert-koin:koin-android:${versions.koin}"
     implementation "io.insert-koin:koin-android-scope:${versions.koin}"
     implementation "io.insert-koin:koin-android-viewmodel:${versions.koin}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinx}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinx}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
-    implementation "com.google.android.material:material:${versions.material}"
-    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
-    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
-    implementation "androidx.room:room-runtime:${versions.room}"
-    kapt "androidx.room:room-compiler:${versions.room}"
+    implementation "com.airbnb.android:epoxy:${versions.epoxy}"
+    kapt "com.airbnb.android:epoxy-processor:${versions.epoxy}"
 
     // Test dependencies
     testImplementation "org.koin:koin-test:${versions.koin}"
