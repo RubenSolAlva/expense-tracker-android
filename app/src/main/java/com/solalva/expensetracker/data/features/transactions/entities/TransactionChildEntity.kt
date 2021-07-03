@@ -3,7 +3,7 @@ package com.solalva.expensetracker.data.features.transactions.entities
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.solalva.expensetracker.data.features.transaction_categories.entities.TransactionCategoryEntity
-import com.solalva.expensetracker.domain.features.transactions.Transaction
+import com.solalva.expensetracker.domain.features.transactions.dataClass.Transaction
 import java.util.Date
 
 data class TransactionChildEntity(

@@ -2,10 +2,10 @@ package com.solalva.expensetracker.data.core.exceptions.handlers
 
 import  com.solalva.expensetracker.domain.core.exceptions.ExceptionHandler
 
-// LogExceptionHandler Implemented but you can implement others:
+// LogExceptionHandler implemented but you can implement others:
 //  - Firebase
 //  - AppDynamics
-//  - MixPannel ...
+//  - MixPanel ...
 
 class ExceptionHandlerManager(private val exceptionHandlers: List<ExceptionHandler>) :
     ExceptionHandler {

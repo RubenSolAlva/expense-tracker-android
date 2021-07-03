@@ -2,7 +2,7 @@ package com.solalva.expensetracker.data.features.financial_accounts.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.solalva.expensetracker.domain.features.financial_accounts.Account
+import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.Account
 
 @Entity(tableName = "financial_accounts")
 data class AccountEntity(

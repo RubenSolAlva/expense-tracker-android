@@ -4,7 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Relation
 import com.solalva.expensetracker.data.features.transactions.entities.TransactionChildEntity
 import com.solalva.expensetracker.data.features.transactions.entities.TransactionEntity
-import com.solalva.expensetracker.domain.features.financial_accounts.FinancialAccount
+import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.FinancialAccount
 
 data class FinancialAccountEntity(
     @Embedded

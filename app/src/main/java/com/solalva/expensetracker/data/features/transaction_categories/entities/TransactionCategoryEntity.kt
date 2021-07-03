@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.solalva.expensetracker.data.features.transaction_categories.entities.TransactionCategoryEntity.Companion.EXPENSE_TYPE
 import com.solalva.expensetracker.data.features.transaction_categories.entities.TransactionCategoryEntity.Companion.INCOME_TYPE
-import com.solalva.expensetracker.domain.features.transaction_categories.TransactionCategory
+import com.solalva.expensetracker.domain.features.transaction_categories.dataClass.TransactionCategory
 import com.solalva.expensetracker.domain.features.transaction_categories.enums.TransactionType
 
 @Entity(tableName = "transaction_categories")
