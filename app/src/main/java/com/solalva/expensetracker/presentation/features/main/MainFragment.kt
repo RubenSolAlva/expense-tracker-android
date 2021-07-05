@@ -34,6 +34,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observers()
+        listeners()
     }
 
     override fun onResume() {
@@ -44,6 +45,10 @@ class MainFragment : Fragment() {
     private fun observers() {
         observe(viewModel.financialAccounts) { updateFianancialAccontsUI(it) }
         observeEvent(viewModel.navigateToTransaction) { navigateToTransaction() }
+    }
+
+    private fun listeners() {
+        binding.mainFloatingActionButton.setOnClickListener { viewModel.onTransactionClickEvent() }
     }
 
     private fun navigateToTransaction() =

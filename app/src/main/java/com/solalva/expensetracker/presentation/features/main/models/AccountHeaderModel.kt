@@ -5,13 +5,13 @@ import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.solalva.expensetracker.R
-import com.solalva.expensetracker.presentation.core.epoxy.EpoxyHolderWrapper
-import kotlinx.android.synthetic.main.main_header.*
+import com.solalva.expensetracker.presentation.core.epoxy.KotlinEpoxyHolder
+import com.solalva.expensetracker.presentation.core.extensions.amountFormat
 import kotlinx.android.synthetic.main.main_header.view.*
 import java.text.NumberFormat
 
 @EpoxyModelClass(layout = R.layout.main_header)
-abstract class AccountHeaderModel : EpoxyModelWithHolder<EpoxyHolderWrapper>() {
+abstract class AccountHeaderModel : EpoxyModelWithHolder<KotlinEpoxyHolder>() {
 
     @EpoxyAttribute
     lateinit var name: String
@@ -19,19 +19,8 @@ abstract class AccountHeaderModel : EpoxyModelWithHolder<EpoxyHolderWrapper>() {
     @EpoxyAttribute
     var balance: Float = 0F
 
-    override fun bind(holder: EpoxyHolderWrapper) {
-        holder.view.nameTextView.text = name
-        holder.view.balanceTextView.currencyFormat(balance)
-    }
-
-    private fun TextView.currencyFormat(amount: Float) {
-        val color = when {
-            amount < 0 -> R.color.design_default_color_error
-            amount > 0 -> R.color.teal_200
-            else -> R.color.purple_700
-        }
-        text = NumberFormat.getCurrencyInstance().format(amount)
-        @Suppress("DEPRECATION") // TODO Remove when no needed api 21
-        setTextColor(context.resources.getColor(color))
+    override fun bind(holder: KotlinEpoxyHolder) {
+        holder.view.main_header_title_text_view.text = name
+        holder.view.main_header_description_text_view.amountFormat(balance)
     }
 }
