@@ -74,7 +74,6 @@ dependencies {
     kapt "com.airbnb.android:epoxy-processor:${versions.epoxy}"
 
     // Test dependencies
-    testImplementation "org.koin:koin-test:${versions.koin}"
     testImplementation "junit:junit:${versions.junit}"
     testImplementation "io.mockk:mockk:${versions.mockk}"
 
