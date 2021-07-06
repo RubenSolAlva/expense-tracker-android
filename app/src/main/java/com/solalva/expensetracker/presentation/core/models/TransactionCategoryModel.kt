@@ -1,6 +1,6 @@
 package com.solalva.expensetracker.presentation.core.models
 
-import com.solalva.expensetracker.domain.features.transaction_categories.dataClass.TransactionCategory
+import com.solalva.expensetracker.domain.features.transactionCategories.dataClass.TransactionCategory
 
 class TransactionCategoryModel(
     val id: Int,

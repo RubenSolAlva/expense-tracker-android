@@ -1,10 +1,9 @@
 package com.solalva.expensetracker.domain.features.transactions.useCases
 
-import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.Account
-import com.solalva.expensetracker.domain.features.transaction_categories.dataClass.TransactionCategory
-import com.solalva.expensetracker.domain.features.transaction_categories.enums.TransactionType
+import com.solalva.expensetracker.domain.features.financialAccounts.dataClass.Account
+import com.solalva.expensetracker.domain.features.transactionCategories.dataClass.TransactionCategory
+import com.solalva.expensetracker.domain.features.transactionCategories.enums.TransactionType
 import com.solalva.expensetracker.domain.features.transactions.ITransactionsRepository
-
 
 class SaveTransactionUseCase(
     private val transactionsRepository: ITransactionsRepository

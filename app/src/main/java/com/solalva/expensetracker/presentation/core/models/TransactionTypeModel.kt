@@ -1,6 +1,6 @@
 package com.solalva.expensetracker.presentation.core.models
 
-import com.solalva.expensetracker.domain.features.transaction_categories.enums.TransactionType
+import com.solalva.expensetracker.domain.features.transactionCategories.enums.TransactionType
 
 
 enum class TransactionTypeModel {

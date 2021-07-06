@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.solalva.expensetracker.domain.core.exceptions.ExceptionHandler
-import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.FinancialAccount
-import com.solalva.expensetracker.domain.features.financial_accounts.useCases.GetFinancialAccountsUseCase
+import com.solalva.expensetracker.domain.features.financialAccounts.dataClass.FinancialAccount
+import com.solalva.expensetracker.domain.features.financialAccounts.useCases.GetFinancialAccountsUseCase
 import com.solalva.expensetracker.presentation.core.base.BaseViewModel
 import com.solalva.expensetracker.presentation.core.lifecycle.Event
 import com.solalva.expensetracker.presentation.core.models.FinancialAccountModel

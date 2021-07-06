@@ -1,6 +1,6 @@
 package com.solalva.expensetracker.domain.features.transactions.dataClass
 
-import com.solalva.expensetracker.domain.features.transaction_categories.dataClass.TransactionCategory
+import com.solalva.expensetracker.domain.features.transactionCategories.dataClass.TransactionCategory
 import java.util.Date
 
 data class Transaction(

@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.solalva.expensetracker.domain.core.exceptions.ExceptionHandler
-import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.Account
-import com.solalva.expensetracker.domain.features.financial_accounts.useCases.GetAccountsUseCase
-import com.solalva.expensetracker.domain.features.transaction_categories.dataClass.TransactionCategory
-import com.solalva.expensetracker.domain.features.transaction_categories.enums.TransactionType
-import com.solalva.expensetracker.domain.features.transaction_categories.useCases.GetTransactionCategoriesByTransactionTypeUseCase
+import com.solalva.expensetracker.domain.features.financialAccounts.dataClass.Account
+import com.solalva.expensetracker.domain.features.financialAccounts.useCases.GetAccountsUseCase
+import com.solalva.expensetracker.domain.features.transactionCategories.dataClass.TransactionCategory
+import com.solalva.expensetracker.domain.features.transactionCategories.enums.TransactionType
+import com.solalva.expensetracker.domain.features.transactionCategories.useCases.GetTransactionCategoriesByTransactionTypeUseCase
 import com.solalva.expensetracker.domain.features.transactions.useCases.SaveTransactionUseCase
 import com.solalva.expensetracker.presentation.core.base.BaseViewModel
 import com.solalva.expensetracker.presentation.core.lifecycle.Event

@@ -1,6 +1,6 @@
 package com.solalva.expensetracker.presentation.core.models
 
-import com.solalva.expensetracker.domain.features.financial_accounts.dataClass.Account
+import com.solalva.expensetracker.domain.features.financialAccounts.dataClass.Account
 
 data class AccountModel(
     val id: Int,

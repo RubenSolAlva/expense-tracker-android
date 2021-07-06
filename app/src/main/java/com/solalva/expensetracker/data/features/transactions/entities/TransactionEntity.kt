@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.solalva.expensetracker.data.features.financial_accounts.entities.AccountEntity
-import com.solalva.expensetracker.data.features.transaction_categories.entities.TransactionCategoryEntity
+import com.solalva.expensetracker.data.features.financialAccounts.entities.AccountEntity
+import com.solalva.expensetracker.data.features.transactionCategories.entities.TransactionCategoryEntity
 import java.util.*
 
 @Entity(
