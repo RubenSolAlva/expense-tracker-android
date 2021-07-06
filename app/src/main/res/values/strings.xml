@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Expense Tracker</string>
     <string name="text_add">Add</string>
     <string name="text_expense">Expense</string>
     <string name="text_income">Income</string>
