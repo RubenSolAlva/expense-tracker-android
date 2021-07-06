@@ -21,7 +21,6 @@ class MainViewModel(
     private val _navigateToTransaction: MutableLiveData<Event<Unit>> = MutableLiveData()
     val navigateToTransaction: LiveData<Event<Unit>> = _navigateToTransaction
 
-
     private val _financialAccounts: MutableLiveData<List<FinancialAccount>> =
         MutableLiveData(emptyList())
     val financialAccounts: LiveData<List<FinancialAccountModel>> =
@@ -29,10 +28,12 @@ class MainViewModel(
             it.map(FinancialAccount::transform)
         }
 
-    fun fetchAccountsDetails() = launch(Dispatchers.Main) {
+    // USE CASE CALLS
+    fun getFinancialAccounts() = launch(Dispatchers.Main) {
         _financialAccounts.value = withContext(Dispatchers.IO) { getFinancialAccountsUseCase() }
     }
 
+    // LISTENERS
     fun onTransactionClickEvent() {
         _navigateToTransaction.value = Event(Unit)
     }

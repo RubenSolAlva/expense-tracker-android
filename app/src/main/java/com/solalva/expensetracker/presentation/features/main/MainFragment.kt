@@ -10,8 +10,8 @@ import com.solalva.expensetracker.databinding.MainFragmentBinding
 import com.solalva.expensetracker.presentation.core.lifecycle.observe
 import com.solalva.expensetracker.presentation.core.lifecycle.observeEvent
 import com.solalva.expensetracker.presentation.core.models.FinancialAccountModel
-import com.solalva.expensetracker.presentation.features.main.models.accountHeader
-import com.solalva.expensetracker.presentation.features.main.models.accountTransactionItem
+import com.solalva.expensetracker.presentation.features.main.models.financialAccountHeader
+import com.solalva.expensetracker.presentation.features.main.models.transactionItem
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -39,11 +39,11 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.fetchAccountsDetails()
+        viewModel.getFinancialAccounts()
     }
 
     private fun observers() {
-        observe(viewModel.financialAccounts) { updateFianancialAccontsUI(it) }
+        observe(viewModel.financialAccounts) { updateFinancialAccountsUI(it) }
         observeEvent(viewModel.navigateToTransaction) { navigateToTransaction() }
     }
 
@@ -56,17 +56,17 @@ class MainFragment : Fragment() {
             MainFragmentDirections.actionMainFragmentToTransactionFragment()
         )
 
-    private fun updateFianancialAccontsUI(financialAccountModel: List<FinancialAccountModel>) {
+    private fun updateFinancialAccountsUI(financialAccountModel: List<FinancialAccountModel>) {
         binding.mainRecyclerView.withModels {
             financialAccountModel.forEach { financialAccount ->
-                accountHeader {
+                financialAccountHeader {
                     id("header-${financialAccount.account.id}")
                     name(financialAccount.account.name)
                     balance(financialAccount.balance)
                 }
 
                 financialAccount.transactions.sortedByDescending { it.time }.forEach { transaction ->
-                    accountTransactionItem {
+                    transactionItem {
                         id("transaction-${transaction.id}")
                         transactionCategoryName(transaction.transactionCategory.name)
                         amount(transaction.amount)

@@ -14,7 +14,7 @@ import java.text.DateFormat
 import java.util.Date
 
 @EpoxyModelClass(layout = R.layout.main_item)
-abstract class AccountTransactionItemModel :
+abstract class TransactionItemModel :
     EpoxyModelWithHolder<KotlinEpoxyHolder>() {
 
     @EpoxyAttribute

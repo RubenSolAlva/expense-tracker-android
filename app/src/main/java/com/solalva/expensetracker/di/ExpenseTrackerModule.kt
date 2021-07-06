@@ -57,5 +57,5 @@ val expenseTrackerModule = module {
 
     //ViewModels
     viewModel { MainViewModel(get(), get()) }
-    viewModel { TransactionViewModel(get()) }
+    viewModel { TransactionViewModel(get(), get(), get(), get()) }
 }
