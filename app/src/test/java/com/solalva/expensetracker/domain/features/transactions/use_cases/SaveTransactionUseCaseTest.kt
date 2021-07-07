@@ -16,17 +16,17 @@ import org.junit.Test
 class SaveTransactionUseCaseTest {
 
     companion object{
-        internal const val amountMocked = 0F
-        internal const val accountIdMocked = 0
-        internal const val transactionCategoryIdMocked = 0
+        internal const val AMOUNT_MOCKED = 0F
+        internal const val ACCOUNT_ID_MOCKED = 0
+        internal const val TRANSACTION_CATEGORY_ID_MOCKED = 0
     }
 
     private val transactionTypeMocked = TransactionType.EXPENSE
     private val accountMocked = mockk<Account> {
-        every { id } returns accountIdMocked
+        every { id } returns ACCOUNT_ID_MOCKED
     }
     private val transactionCategoryMocked = mockk<TransactionCategory> {
-        every { id } returns transactionCategoryIdMocked
+        every { id } returns TRANSACTION_CATEGORY_ID_MOCKED
         every { transactionType } returns transactionTypeMocked
     }
     private val transactionsRepository = mockkClass(ITransactionsRepository::class){
@@ -36,7 +36,7 @@ class SaveTransactionUseCaseTest {
 
     @Test
     fun `On invoke SaveTransactionUseCase should call repository to save transaction`() {
-        runBlocking { saveTransactionUseCase(accountMocked, transactionCategoryMocked, amountMocked) }
+        runBlocking { saveTransactionUseCase(accountMocked, transactionCategoryMocked, AMOUNT_MOCKED) }
 
         coVerify { transactionsRepository.saveTransaction(any(), any(), any()) }
     }
