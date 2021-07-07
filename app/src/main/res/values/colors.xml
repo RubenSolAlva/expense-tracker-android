@@ -6,14 +6,6 @@
     <color name="colorAccent">#009ABF</color>
     <color name="colorAccentDark">#006B85</color>
 
-    <color name="colorCat1">#2F26A9</color>
-    <color name="colorCat2">#F65050</color>
-    <color name="colorCat3">#322680</color>
-    <color name="colorCat4">#F7BEB9</color>
-    <color name="colorCat5">#F2C37D</color>
-    <color name="colorCat6">#44738A</color>
-    <color name="colorCat7">#699C53</color>
-
     <color name="colorPositive">#60BC77</color>
     <color name="colorNegative">#ED7474</color>
     <color name="colorNeutral">#6A9DF3</color>
