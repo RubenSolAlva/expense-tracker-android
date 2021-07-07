@@ -106,22 +106,22 @@ class TransactionFragment : Fragment() {
 
     private fun updateAccountError(accountError: Boolean) {
         if (accountError)
-            binding.transactionAccountsAutocompleteTextView.error =
+            binding.transactionAccountsTextInputLayout.error =
                 getString(R.string.text_field_error)
-        else binding.transactionAccountsAutocompleteTextView.error = null
+        else binding.transactionAccountsTextInputLayout.error = null
     }
-    
+
     private fun updateTransactionCategoryError(transactionCategoryError: Boolean) {
         if (transactionCategoryError)
-            binding.transactionCategoriesAutocompleteTextView.error =
+            binding.transactionCategoriesTextInputLayout.error =
                 getString(R.string.text_field_error)
-        else binding.transactionCategoriesAutocompleteTextView.error = null
+        else binding.transactionCategoriesTextInputLayout.error = null
     }
 
     private fun updateAmountError(amountError: Boolean) {
         if (amountError)
-            binding.transactionAmountEditText.error = getString(R.string.text_field_error)
-        else binding.transactionAmountEditText.error = null
+            binding.transactionAmountTextInputLayout.error = getString(R.string.text_field_error)
+        else binding.transactionAmountTextInputLayout.error = null
     }
 
     private fun navigateToBack() {
