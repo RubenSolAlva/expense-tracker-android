@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExpenseTracker"
         tools:ignore="AllowBackup, MediaCapabilities">
-        <activity android:name=".presentation.MainActivity">
+        <activity
+            android:name=".presentation.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
