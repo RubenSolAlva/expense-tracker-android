@@ -18,6 +18,7 @@ class AccountModelTest {
         every { name } returns ACCOUNT_NAME_MOCKED
     }
 
+    // Model test example
     @Test
     fun `On invoke Account transform from AccountModel should return AccountModel`() {
         val result = accountMocked.transform()
