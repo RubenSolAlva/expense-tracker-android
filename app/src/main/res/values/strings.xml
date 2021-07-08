@@ -1,0 +1,10 @@
+<resources>
+    <string name="text_add">Add</string>
+    <string name="text_expense">Expense</string>
+    <string name="text_income">Income</string>
+    <string name="text_account">Account</string>
+    <string name="text_category">Transaction Category</string>
+    <string name="text_amount">Amount</string>
+    <string name="text_field_error">This field must not be empty</string>
+    <string name="text_save">Save</string>
+</resources>
